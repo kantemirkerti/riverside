@@ -1,17 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riverside House</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-    </div>
+  <!-- Sticky / fixed header -->
+  <header class="site-header">
+    <img class="logo" src="/Images/Riverside_Screen-01.png" alt="Riverside House logo" />
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <img class="hero-bg" src="/Images/IMG_1880(1).jpg" alt="Mountain house background" />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">ОТВЕТЬ НА ЗОВ ГОР</h1>
+        <p class="hero-subtitle">Уютные A-frame дома и барнхаус в горах</p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#houses">Выбрать дом</a>
+          <a class="btn btn-outline" href="#contact">Связаться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT SECTIONS (placeholders for now) -->
+    <section id="houses" class="section">
+        <section id="houses" class="section">
+            <h2 class="section-title">Наши дома</h2>
+            <p class="section-lead">
+              Два A-frame дома и один барнхаус. Уединение, тишина и вид на горы.
+            </p>
+          
+            <div class="cards">
+              <!-- A-FRAME 1 -->
+              <article class="card">
+                <div class="card-media">
+                  <img src="/Images/aframe1.jpg" alt="A-frame дом №1" />
+                </div>
+          
+                <div class="card-body">
+                  <h3 class="card-title">A-frame №1</h3>
+                  <p class="card-text">
+                    Компактный дом для спокойного отдыха. Панорамные окна и тёплый свет вечером.
+                  </p>
+          
+                  <ul class="card-features">
+                    <li>До 4 гостей</li>
+                    <li>Кухня и посуда</li>
+                    <li>Санузел с душем</li>
+                    <li>Терраса</li>
+                  </ul>
+          
+                  <div class="card-actions">
+                    <a class="btn btn-outline" href="#contact">Галерея</a>
+                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
+                  </div>
+                </div>
+              </article>
+          
+              <!-- A-FRAME 2 -->
+              <article class="card">
+                <div class="card-media">
+                  <img src="/Images/aframe2.jpg" alt="A-frame дом №2" />
+                </div>
+          
+                <div class="card-body">
+                  <h3 class="card-title">A-frame №2</h3>
+                  <p class="card-text">
+                    Больше пространства и воздуха. Отлично подходит для пары или небольшой семьи.
+                  </p>
+          
+                  <ul class="card-features">
+                    <li>До 5 гостей</li>
+                    <li>Отдельная спальня</li>
+                    <li>Камин / печь (если есть)</li>
+                    <li>Зона для мангала</li>
+                  </ul>
+          
+                  <div class="card-actions">
+                    <a class="btn btn-outline" href="#contact">Галерея</a>
+                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
+                  </div>
+                </div>
+              </article>
+          
+              <!-- BARNHOUSE -->
+              <article class="card">
+                <div class="card-media">
+                  <img src="/Images/barnhouse.jpg" alt="Барнхаус" />
+                </div>
+          
+                <div class="card-body">
+                  <h3 class="card-title">Барнхаус</h3>
+                  <p class="card-text">
+                    Просторный дом с высоким потолком. Для компании, длинных разговоров и горного воздуха.
+                  </p>
+          
+                  <ul class="card-features">
+                    <li>До 8 гостей</li>
+                    <li>Большая кухня-гостиная</li>
+                    <li>2 спальни (если есть)</li>
+                    <li>Видовая терраса</li>
+                  </ul>
+          
+                  <div class="card-actions">
+                    <a class="btn btn-outline" href="#contact">Галерея</a>
+                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+          
+
+          <section id="contact" class="section section-dark">
+            <h2 class="section-title">Контакты</h2>
+            <p class="section-lead">
+              Свяжитесь с нами удобным для вас способом.
+            </p>
+          
+            <div class="contact-icons">
+              <a class="contact-link" href="https://wa.me/79287146354" target="_blank" aria-label="WhatsApp">
+                <img src="/Images/whatsapp.svg" alt="WhatsApp">
+                <span>WhatsApp</span>
+              </a>
+          
+              <a class="contact-link" href="https://t.me/riverside_house_07" target="_blank" aria-label="Telegram">
+                <img src="/Images/telegram.svg" alt="Telegram">
+                <span>Telegram</span>
+              </a>
+          
+              <a class="contact-link" href="https://instagram.com/riverside_house_07" target="_blank" aria-label="Instagram">
+                <img src="/Images/instagram.svg" alt="Instagram">
+                <span>Instagram</span>
+              </a>
+          
+              <a class="contact-link" href="tel:+79287146354" aria-label="Телефон">
+                <img src="/Images/phone.svg" alt="Телефон">
+                <span>Телефон</span>
+              </a>
+            </div>
+          </section>
+          
+  </main>
 </body>
 </html>
