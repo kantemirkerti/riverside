@@ -11,16 +11,21 @@
 </head>
 
 <body>
-  <!-- Sticky / fixed header -->
-  <header class="site-header">
-    <img class="logo" src="Images/Riverside_Screen-01.png" alt="Riverside House logo" />
-  </header>
+  <!-- Intro / splash (white screen + centered logo) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <img class="intro-logo" src="Images/Riverside_Screen-01.png" alt="">
+  </div>
+  
 
   <!-- HERO -->
   <main>
     <section class="hero">
       <img class="hero-bg" src="./Images/IMG_1880(1).jpg" alt="Mountain house background" />
       <div class="hero-overlay"></div>
+
+        <header class="site-header">
+          <img id="headerLogo" class="logo" src="Images/Riverside_Screen-01.png" alt="Riverside House logo" />
+        </header>
 
       <div class="hero-content">
         <h1 class="hero-title">ОТВЕТЬ НА ЗОВ ГОР</h1>
@@ -153,5 +158,6 @@
           </section>
           
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
