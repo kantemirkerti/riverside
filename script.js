@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2) Hold / hover
     const HOLD_MS = 1100;
     const MOVE_MS = 2200; // must match the transform transition time in CSS
-    const OVERLAY_FADE_MS = 250;
+    const OVERLAY_FADE_MS = 900;
   
     setTimeout(() => {
       // Force layout so the browser "commits" initial state before we transform
