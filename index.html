@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,157 +7,170 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet"></head>
 
 <body>
-  <!-- Intro / splash (white screen + centered logo) -->
-  <div class="intro" id="intro" aria-hidden="true">
-    <img class="intro-logo" src="Images/Riverside_Screen-01.png" alt="">
-  </div>
-  
-
-  <!-- HERO -->
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <img class="hero-bg" src="./Images/IMG_1880(1).jpg" alt="Mountain house background" />
+      <img class="hero-bg" src="Images/IMG_1752.JPG" alt="Горный дом, вид на природу" />
       <div class="hero-overlay"></div>
 
-        <header class="site-header">
-          <img id="headerLogo" class="logo" src="Images/Riverside_Screen-01.png" alt="Riverside House logo" />
-        </header>
+      <!-- Top bar overlay: logo left, buttons right -->
+      <div class="hero-topbar">
+        <img class="logo" src="Images/Riverside_Screen-01.png" alt="Riverside House" />
+
+        <div class="hero-top-actions">
+          <a class="btn btn-outline" href="#houses">Выбрать дом</a>
+          <a class="btn" href="#contact">Связаться</a>
+        </div>
+      </div>
 
       <div class="hero-content">
         <h1 class="hero-title">ОТВЕТЬ НА ЗОВ ГОР</h1>
-        <p class="hero-subtitle">Уютные A-frame дома и барнхаус в горах</p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#houses">Выбрать дом</a>
-          <a class="btn btn-outline" href="#contact">Связаться</a>
-        </div>
+        <p class="hero-subtitle">A-frame дома и барнхаус в Терсколе — у реки Гарабаши, с видом на Чегет и трассу</p>
       </div>
     </section>
 
-    <!-- NEXT SECTIONS (placeholders for now) -->
+    <!-- HOUSES -->
     <section id="houses" class="section">
-        <section id="houses" class="section">
-            <h2 class="section-title">Наши дома</h2>
-            <p class="section-lead">
-              Два A-frame дома и один барнхаус. Уединение, тишина и вид на горы.
-            </p>
-          
-            <div class="cards">
-              <!-- A-FRAME 1 -->
-              <article class="card">
-                <div class="card-media">
-                  <img src="Images/aframe1.jpg" alt="A-frame дом №1" />
-                </div>
-          
-                <div class="card-body">
-                  <h3 class="card-title">A-frame №1</h3>
-                  <p class="card-text">
-                    Компактный дом для спокойного отдыха. Панорамные окна и тёплый свет вечером.
-                  </p>
-          
-                  <ul class="card-features">
-                    <li>До 4 гостей</li>
-                    <li>Кухня и посуда</li>
-                    <li>Санузел с душем</li>
-                    <li>Терраса</li>
-                  </ul>
-          
-                  <div class="card-actions">
-                    <a class="btn btn-outline" href="#contact">Галерея</a>
-                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
-                  </div>
-                </div>
-              </article>
-          
-              <!-- A-FRAME 2 -->
-              <article class="card">
-                <div class="card-media">
-                  <img src="Images/aframe2.jpg" alt="A-frame дом №2" />
-                </div>
-          
-                <div class="card-body">
-                  <h3 class="card-title">A-frame №2</h3>
-                  <p class="card-text">
-                    Больше пространства и воздуха. Отлично подходит для пары или небольшой семьи.
-                  </p>
-          
-                  <ul class="card-features">
-                    <li>До 5 гостей</li>
-                    <li>Отдельная спальня</li>
-                    <li>Камин / печь (если есть)</li>
-                    <li>Зона для мангала</li>
-                  </ul>
-          
-                  <div class="card-actions">
-                    <a class="btn btn-outline" href="#contact">Галерея</a>
-                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
-                  </div>
-                </div>
-              </article>
-          
-              <!-- BARNHOUSE -->
-              <article class="card">
-                <div class="card-media">
-                  <img src="Images/barnhouse.jpg" alt="Барнхаус" />
-                </div>
-          
-                <div class="card-body">
-                  <h3 class="card-title">Барнхаус</h3>
-                  <p class="card-text">
-                    Просторный дом с высоким потолком. Для компании, длинных разговоров и горного воздуха.
-                  </p>
-          
-                  <ul class="card-features">
-                    <li>До 8 гостей</li>
-                    <li>Большая кухня-гостиная</li>
-                    <li>2 спальни (если есть)</li>
-                    <li>Видовая терраса</li>
-                  </ul>
-          
-                  <div class="card-actions">
-                    <a class="btn btn-outline" href="#contact">Галерея</a>
-                    <a class="btn" href="https://wa.me/79287146354">Забронировать</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </section>
-          
+      <h2 class="section-title">Наши дома</h2>
+      <p class="section-lead">
+        Два A-frame дома и барнхаус. Уединение, тишина и горный воздух — в одном из самых красивых мест Приэльбрусья.
+      </p>
 
-          <section id="contact" class="section section-dark">
-            <h2 class="section-title">Контакты</h2>
-            <p class="section-lead">
-              Свяжитесь с нами удобным для вас способом.
+      <div class="cards">
+        <!-- A-FRAME 1 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="Images/aframe1.jpg" alt="A-frame дом №1" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="card-title">A-frame №1</h3>
+            <p class="card-text">
+              Уютный двухэтажный дом. Подходит для компании до 6 человек (при использовании дивана).
             </p>
-          
-            <div class="contact-icons">
-              <a class="contact-link" href="https://wa.me/79287146354" target="_blank" aria-label="WhatsApp">
-                <img src="Images/whatsapp.svg" alt="WhatsApp">
-                <span>WhatsApp</span>
-              </a>
-          
-              <a class="contact-link" href="https://t.me/riverside_house_07" target="_blank" aria-label="Telegram">
-                <img src="Images/telegram.svg" alt="Telegram">
-                <span>Telegram</span>
-              </a>
-          
-              <a class="contact-link" href="https://instagram.com/riverside_house_07" target="_blank" aria-label="Instagram">
-                <img src="Images/instagram.svg" alt="Instagram">
-                <span>Instagram</span>
-              </a>
-          
-              <a class="contact-link" href="tel:+79287146354" aria-label="Телефон">
-                <img src="Images/phone.svg" alt="Телефон">
-                <span>Телефон</span>
-              </a>
+
+            <ul class="card-features">
+              <li>4 спальных места (2 комнаты на втором этаже)</li>
+              <li>До 6 гостей (диван как спальное место)</li>
+              <li>1 санузел: фен, средства гигиены, тапочки, халаты</li>
+              <li>Гостиная + Smart TV</li>
+              <li>Мини-кухня и обеденная зона</li>
+              <li>Мангал и крытая беседка</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
             </div>
-          </section>
-          
+          </div>
+        </article>
+
+        <!-- A-FRAME 2 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="Images/aframe2.jpg" alt="A-frame дом №2" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="card-title">A-frame №2</h3>
+            <p class="card-text">
+              Второй A-frame с тем же уютом и планировкой. Отличается наличием балкона.
+            </p>
+
+            <ul class="card-features">
+              <li>4 спальных места (2 комнаты на втором этаже)</li>
+              <li>До 6 гостей (диван как спальное место)</li>
+              <li>1 санузел: фен, средства гигиены, тапочки, халаты</li>
+              <li>Гостиная + Smart TV</li>
+              <li>Мини-кухня и обеденная зона</li>
+              <li>Балкон</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BARNHOUSE -->
+        <article class="card">
+          <div class="card-media">
+            <img src="Images/barnhouse.jpg" alt="Барнхаус" />
+          </div>
+
+          <div class="card-body">
+            <h3 class="card-title">Барнхаус — 130 м²</h3>
+            <p class="card-text">
+              Просторный двухэтажный дом для большой компании: 6 комнат и 10 спальных мест.
+            </p>
+
+            <ul class="card-features">
+              <li>130 м², 2 этажа</li>
+              <li>6 комнат, 10 спальных мест (4 + 6)</li>
+              <li>2 санузла: фен, средства гигиены, тапочки</li>
+              <li>Большой меблированный зал + отдельная комната с ТВ</li>
+              <li>Мини-кухня и большая столовая зона</li>
+              <li>Мангал и крытая беседка</li>
+            </ul>
+
+            <div class="card-actions">
+              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOCATION / DETAILS -->
+    <section id="location" class="section">
+      <h2 class="section-title">Локация и детали</h2>
+      <p class="section-lead">
+        Дома находятся в с. Терскол. С территории открывается вид на горнолыжную трассу и гору Чегет. Рядом — река Гарабаши и эко-тропа по заповедному лесу Приэльбрусья.
+      </p>
+
+      <ul class="card-features">
+        <li><strong>Расчётное время:</strong> заезд — 14:00, выезд — 12:00</li>
+        <li><strong>Адрес:</strong> с. Терскол, ул. Эльбрусская 2Б</li>
+        <li><strong>Стоимость в ноябре:</strong> A-frame — 9 000 ₽/сутки, барнхаус — 18 000 ₽/сутки</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-dark">
+      <h2 class="section-title">Контакты</h2>
+      <p class="section-lead">
+        По вопросам бронирования и уточнения деталей — пишите или звоните.
+        <br>Контакт: Ризуан — <a href="tel:+79287146354" style="color:#fff;">+7 928 714-63-54</a>
+      </p>
+
+      <div class="contact-icons">
+        <!-- WhatsApp: updated/confirmed correct number -->
+        <a class="contact-link" href="https://wa.me/79287146354" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img src="Images/whatsapp.svg" alt="WhatsApp">
+          <span>WhatsApp</span>
+        </a>
+
+        <a class="contact-link" href="https://t.me/riverside_house_07" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="Images/telegram.svg" alt="Telegram">
+          <span>Telegram</span>
+        </a>
+
+        <a class="contact-link" href="https://instagram.com/riverside_house_07" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="Images/instagram.svg" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+
+        <a class="contact-link" href="tel:+79287146354" aria-label="Телефон">
+          <img src="Images/phone.svg" alt="Телефон">
+          <span>Телефон</span>
+        </a>
+      </div>
+    </section>
   </main>
-  <script src="script.js"></script>
 </body>
 </html>
