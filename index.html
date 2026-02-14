@@ -62,7 +62,7 @@
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn btn-outline gallery-btn" href="#" data-gallery="aframe1">Галерея</a>
               <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
             </div>
           </div>
@@ -90,7 +90,7 @@
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn btn-outline gallery-btn" href="#" data-gallery="aframe2">Галерея</a>
               <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
             </div>
           </div>
@@ -118,7 +118,7 @@
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-outline" href="#contact">Галерея</a>
+              <a class="btn btn-outline gallery-btn" href="#" data-gallery="barnhouse">Галерея</a>
               <a class="btn" href="https://wa.me/79287146354" target="_blank" rel="noopener">Забронировать</a>
             </div>
           </div>
@@ -172,5 +172,25 @@
       </div>
     </section>
   </main>
+
+  <div class="modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+  
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Галерея">
+      <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+  
+      <button class="modal-nav modal-prev" type="button" data-prev aria-label="Предыдущее фото">‹</button>
+  
+      <figure class="modal-figure">
+        <img id="modalImage" alt="">
+        <figcaption id="modalCaption"></figcaption>
+      </figure>
+  
+      <button class="modal-nav modal-next" type="button" data-next aria-label="Следующее фото">›</button>
+    </div>
+  </div>
+  
+  <script src="gallery.js"></script>
+  
 </body>
 </html>
