@@ -17,6 +17,30 @@ body {
   color: var(--text);
 }
 
+@font-face {
+  font-family: "Corvetta";
+  src: url("fonts/Corvetta.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lonely";
+  src: url("fonts/Mr_Lonely.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metro";
+  src: url("fonts/MoscowMetro.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* =========================
    HERO
    ========================= */
@@ -84,12 +108,12 @@ body {
 }
 
 .hero-title {
-  font-family: "Oi", serif;
+  /* font-family: "Oi", serif; */
+  font-family: "Metro", serif;
   font-weight: 400;
-  font-size: clamp(42px, 5vw, 76px);
+  font-size: clamp(70px, 8vw, 130px);
   line-height: 1.05;
-  text-transform: uppercase;
-  max-width: 20ch;
+  letter-spacing: 1.2px;
 }
 
 .hero-subtitle {
@@ -298,5 +322,77 @@ body {
 
   .contact-icons {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile + small screens: fix top bar + hero text scaling */
+@media (max-width: 768px) {
+  .hero-topbar {
+    top: 14px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    height: clamp(64px, 12vw, 92px);
+  }
+
+  .hero-top-actions {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  /* keep hero text in bottom-right but give it room */
+  .hero-content {
+    right: 16px;
+    bottom: 16px;
+    max-width: min(92vw, 520px);
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 8vw, 64px);
+    letter-spacing: 0.8px;
+    max-width: 18ch;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 3.6vw, 20px);
+  }
+}
+
+/* Very small screens: stack buttons vertically and tighten type */
+@media (max-width: 420px) {
+  .hero-topbar {
+    padding: 0 12px;
+  }
+
+  .hero-top-actions {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 9px 12px;
+    font-size: 13px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 9vw, 54px);
+    letter-spacing: 0.6px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(15px, 4vw, 18px);
   }
 }
