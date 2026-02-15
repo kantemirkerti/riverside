@@ -19,7 +19,7 @@ body {
 
 @font-face {
   font-family: "Corvetta";
-  src: url("fonts/Corvetta.ttf") format("truetype");
+  src: url("fonts/") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -108,13 +108,15 @@ body {
 }
 
 .hero-title {
-  /* font-family: "Oi", serif; */
-  font-family: "Metro", serif;
-  font-weight: 400;
-  font-size: clamp(70px, 8vw, 130px);
-  line-height: 1.05;
-  letter-spacing: 1.2px;
+  font-family: "Oi", serif;
+  font-size: clamp(28px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: 0.5px;
+  
 }
+
+
+
 
 .hero-subtitle {
   margin-top: 18px;
