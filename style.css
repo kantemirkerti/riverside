@@ -12,34 +12,27 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Akrobat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
 @font-face {
-  font-family: "Corvetta";
-  src: url("fonts/") format("truetype");
+  font-family: "Dazed";
+  src: url("fonts/DazedandCondensed-Bold.woff") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Lonely";
-  src: url("fonts/Mr_Lonely.otf") format("truetype");
+  font-family: "Akrobat";
+  src: url("fonts/Akrobat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Metro";
-  src: url("fonts/MoscowMetro.otf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* =========================
    HERO
@@ -108,14 +101,14 @@ body {
 }
 
 .hero-title {
-  font-family: "Oi", serif;
-  font-size: clamp(28px, 5vw, 64px);
-  line-height: 1;
-  letter-spacing: 0.5px;
-  
+  font-family: "Dazed", sans-serif;
+  font-weight: 400;
+  font-size: clamp(90px, 11vw, 170px);
+  line-height: 0.95;
+  letter-spacing: 1px;
+
+
 }
-
-
 
 
 .hero-subtitle {
