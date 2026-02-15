@@ -17,9 +17,11 @@ body {
   color: var(--text);
 }
 
+/* ===== Fonts ===== */
+
 @font-face {
   font-family: "Dazed";
-  src: url("fonts/DazedandCondensed-Bold.woff") format("truetype");
+  src: url("fonts/DazedandCondensed-Bold.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -32,7 +34,6 @@ body {
   font-style: normal;
   font-display: swap;
 }
-
 
 /* =========================
    HERO
@@ -61,7 +62,7 @@ body {
 }
 
 /* =========================
-   TOP BAR (overlay)
+   TOP BAR
    ========================= */
 
 .hero-topbar {
@@ -88,7 +89,7 @@ body {
 }
 
 /* =========================
-   HERO CONTENT (bottom-right)
+   HERO CONTENT (RIGHT ALIGNED)
    ========================= */
 
 .hero-content {
@@ -97,24 +98,28 @@ body {
   bottom: 14%;
   z-index: 2;
   max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
 }
 
 .hero-title {
   font-family: "Dazed", sans-serif;
   font-weight: 400;
-  font-size: clamp(90px, 11vw, 170px);
-  line-height: 0.95;
+  font-size: clamp(110px, 12vw, 200px);
+  line-height: 0.85;
   letter-spacing: 1px;
-
-
+  white-space: normal; /* allow 2 lines */
+  display: inline-block;
 }
-
 
 .hero-subtitle {
   margin-top: 18px;
   font-size: clamp(18px, 2vw, 24px);
   opacity: 0.95;
+  display: inline-block;
 }
 
 /* =========================
@@ -208,8 +213,7 @@ body {
 }
 
 .card-title {
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
+  font-family: "Akrobat", sans-serif;
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -304,23 +308,6 @@ body {
   }
 }
 
-@media (max-width: 600px) {
-  .hero-top-actions {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .hero-content {
-    right: 6%;
-    bottom: 10%;
-  }
-
-  .contact-icons {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile + small screens: fix top bar + hero text scaling */
 @media (max-width: 768px) {
   .hero-topbar {
     top: 14px;
@@ -340,17 +327,15 @@ body {
     font-size: 14px;
   }
 
-  /* keep hero text in bottom-right but give it room */
   .hero-content {
     right: 16px;
     bottom: 16px;
-    max-width: min(92vw, 520px);
   }
 
   .hero-title {
-    font-size: clamp(38px, 8vw, 64px);
+    font-size: clamp(64px, 14vw, 120px);
+    line-height: 0.9;
     letter-spacing: 0.8px;
-    max-width: 18ch;
   }
 
   .hero-subtitle {
@@ -358,127 +343,17 @@ body {
   }
 }
 
-/* Very small screens: stack buttons vertically and tighten type */
 @media (max-width: 420px) {
-  .hero-topbar {
-    padding: 0 12px;
-  }
-
-  .hero-top-actions {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-
-  .btn {
-    padding: 9px 12px;
-    font-size: 13px;
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-
   .hero-content {
     right: 12px;
     bottom: 12px;
   }
 
   .hero-title {
-    font-size: clamp(34px, 9vw, 54px);
-    letter-spacing: 0.6px;
+    font-size: clamp(52px, 15vw, 90px);
   }
 
   .hero-subtitle {
     font-size: clamp(15px, 4vw, 18px);
-  }
-}
-
-/* ===== Gallery Modal ===== */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: none;
-}
-
-.modal.is-open {
-  display: block;
-}
-
-.modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-}
-
-.modal-dialog {
-  position: relative;
-  width: min(980px, 92vw);
-  height: min(78vh, 760px);
-  margin: 8vh auto 0;
-  background: rgba(10,10,10,0.92);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 56px 1fr 56px;
-  align-items: center;
-}
-
-.modal-figure {
-  margin: 0;
-  padding: 18px 12px;
-  text-align: center;
-}
-
-.modal-figure img {
-  width: 100%;
-  height: calc(min(78vh, 760px) - 90px);
-  object-fit: contain;
-  display: block;
-}
-
-.modal-figure figcaption {
-  margin-top: 10px;
-  opacity: 0.85;
-  font-size: 14px;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(0,0,0,0.35);
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.modal-nav {
-  height: 100%;
-  border: none;
-  background: transparent;
-  color: #fff;
-  font-size: 44px;
-  cursor: pointer;
-  opacity: 0.9;
-}
-
-.modal-nav:hover,
-.modal-close:hover {
-  opacity: 1;
-}
-
-@media (max-width: 600px) {
-  .modal-dialog {
-    grid-template-columns: 44px 1fr 44px;
-    height: 80vh;
-    margin-top: 6vh;
-  }
-  .modal-figure img {
-    height: calc(80vh - 90px);
   }
 }
