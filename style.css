@@ -12,33 +12,27 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Akrobat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
-/* =========================
-   HEADER (overlay, not fixed)
-   ========================= */
+/* ===== Fonts ===== */
 
-/* Overlay header (does NOT occupy space, NOT sticky/fixed) */
-.site-header {
-  position: absolute;
-  top: 24px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 5;
-  pointer-events: none; /* keeps hero buttons clickable */
+@font-face {
+  font-family: "Dazed";
+  src: url("fonts/DazedandCondensed-Bold.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-.logo {
-  height: clamp(120px, 12vw, 200px);
-  width: auto;
-  pointer-events: auto;
-  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
-  opacity: 0.92;
+@font-face {
+  font-family: "Akrobat";
+  src: url("fonts/Akrobat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* =========================
@@ -48,8 +42,6 @@ body {
 .hero {
   position: relative;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
   overflow: hidden;
 }
 
@@ -69,50 +61,94 @@ body {
   z-index: 1;
 }
 
+/* =========================
+   TOP BAR
+   ========================= */
+
+.hero-topbar {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+.logo {
+  height: clamp(90px, 9vw, 140px);
+  width: auto;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,0.45));
+}
+
+.hero-top-actions {
+  display: flex;
+  gap: 14px;
+}
+
+/* =========================
+   HERO CONTENT (RIGHT ALIGNED)
+   ========================= */
+
 .hero-content {
-  position: relative;
+  position: absolute;
+  right: 8%;
+  bottom: 14%;
   z-index: 2;
-  width: min(1000px, 92%);
-  padding: 110px 0 60px; /* keep; header is overlay anyway */
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   text-align: right;
 }
 
 .hero-title {
-  font-family: "Dela Gothic One", sans-serif;
+  font-family: "Dazed", sans-serif;
   font-weight: 400;
-  font-size: clamp(34px, 5vw, 72px);
-  line-height: 1.05;
-  text-transform: uppercase;
+  font-size: clamp(110px, 12vw, 200px);
+  line-height: 0.85;
+  letter-spacing: 1px;
+  white-space: normal; /* allow 2 lines */
+  display: inline-block;
 }
 
 .hero-subtitle {
-  margin-top: 14px;
-  font-size: clamp(14px, 1.6vw, 18px);
-  opacity: 0.9;
+  margin-top: 18px;
+  font-size: clamp(18px, 2vw, 24px);
+  opacity: 0.95;
+  display: inline-block;
 }
 
-.hero-actions {
-  margin-top: 22px;
-  display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
+/* =========================
+   BUTTONS
+   ========================= */
 
 .btn {
   display: inline-block;
-  padding: 12px 16px;
+  padding: 12px 18px;
   border-radius: 999px;
   text-decoration: none;
-  color: #000;
-  background: #fff;
   font-weight: 600;
+  font-size: 15px;
+  transition: 160ms ease;
 }
 
 .btn-outline {
   background: transparent;
   color: #fff;
   border: 1px solid rgba(255,255,255,0.7);
+}
+
+.btn {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -125,16 +161,6 @@ body {
   margin: 0 auto;
 }
 
-.section h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.section-dark {
-  background: #111;
-  max-width: none;
-}
-
 .section-title {
   font-size: clamp(24px, 3vw, 34px);
   margin-bottom: 10px;
@@ -145,6 +171,11 @@ body {
   opacity: 0.9;
   line-height: 1.5;
   margin-bottom: 26px;
+}
+
+.section-dark {
+  background: #111;
+  max-width: none;
 }
 
 /* =========================
@@ -162,6 +193,7 @@ body {
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 22px;
   overflow: hidden;
+  transition: 160ms ease;
 }
 
 .card-media {
@@ -181,8 +213,7 @@ body {
 }
 
 .card-title {
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
+  font-family: "Akrobat", sans-serif;
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -222,19 +253,7 @@ body {
 
 .card:hover {
   border-color: rgba(255,255,255,0.22);
-  transform: translateY(-2px);
-  transition: 160ms ease;
-}
-
-/* адаптив */
-@media (max-width: 980px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card-media {
-    height: 220px;
-  }
+  transform: translateY(-3px);
 }
 
 /* =========================
@@ -257,6 +276,7 @@ body {
   text-decoration: none;
   color: #fff;
   opacity: 0.9;
+  transition: 160ms ease;
 }
 
 .contact-link img {
@@ -272,62 +292,164 @@ body {
 .contact-link:hover {
   opacity: 1;
   transform: translateY(-2px);
-  transition: 160ms ease;
 }
 
-/* мобильная адаптация */
-@media (max-width: 600px) {
-  .contact-icons {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 980px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-media {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-topbar {
+    top: 14px;
+    padding: 0 16px;
+  }
+
+  .logo {
+    height: clamp(64px, 12vw, 92px);
+  }
+
+  .hero-top-actions {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .hero-content {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(64px, 14vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 0.8px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 3.6vw, 20px);
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-content {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 15vw, 90px);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(15px, 4vw, 18px);
   }
 }
 
 /* =========================
-   INTRO (pixel-perfect landing via JS)
+   GALLERY MODAL
    ========================= */
 
-.intro {
-  position: fixed;
-  inset: 0;
-  background: #fff;
-  display: grid;
-  place-items: center;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 1;
-}
-
-.intro-logo {
-  width: min(78vw, 560px);
-  height: auto;
-  transform-origin: top left;
-  opacity: 0;
-  transition:
-    opacity 900ms ease,
-    transform 2200ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform, opacity;
-}
-
-.intro-logo.is-visible {
-  opacity: 1;
-}
-
-/* Prevent double-logo while intro runs */
-body.intro-running .site-header {
-  opacity: 0;
-}
-
-body.intro-done .site-header {
-  opacity: 1;
-  transition: opacity 220ms ease;
-}
-
-/* Reduced motion: skip intro */
-@media (prefers-reduced-motion: reduce) {
-  .intro {
+   .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
     display: none;
   }
-  body.intro-running .site-header {
+  
+  .modal.is-open {
+    display: block;
+  }
+  
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+  }
+  
+  .modal-dialog {
+    position: relative;
+    width: min(1000px, 92vw);
+    height: min(80vh, 760px);
+    margin: 8vh auto 0;
+    background: rgba(10,10,10,0.95);
+    border-radius: 18px;
+    overflow: hidden;
+  
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    align-items: center;
+  }
+  
+  .modal-figure {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .modal-figure img {
+    width: 100%;
+    height: calc(min(80vh, 760px) - 100px);
+    object-fit: contain;
+    display: block;
+  }
+  
+  .modal-figure figcaption {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .modal-nav {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 48px;
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  
+  .modal-nav:hover,
+  .modal-close:hover {
     opacity: 1;
   }
-}
+  
+  /* Mobile adjustment */
+  @media (max-width: 600px) {
+    .modal-dialog {
+      grid-template-columns: 40px 1fr 40px;
+      height: 85vh;
+      margin-top: 6vh;
+    }
+  
+    .modal-figure img {
+      height: calc(85vh - 100px);
+    }
+  }
+  
