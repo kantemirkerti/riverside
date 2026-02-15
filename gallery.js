@@ -1,93 +1,112 @@
 (() => {
-    // TODO: replace these with your real image paths
-    // You can add as many images as you want per house.
-    const GALLERIES = {
-      aframe1: [
-        { src: "Images/aframe1.jpg", caption: "A-frame №1" },
-        // { src: "Images/aframe1_2.jpg", caption: "A-frame №1 — интерьер" },
-        // { src: "Images/aframe1_3.jpg", caption: "A-frame №1 — вид из окна" },
-      ],
-      aframe2: [
-        { src: "Images/aframe2.jpg", caption: "A-frame №2" },
-        // { src: "Images/aframe2_2.jpg", caption: "A-frame №2 — балкон" },
-      ],
-      barnhouse: [
-        { src: "Images/barnhouse.jpg", caption: "Барнхаус — 130 м²" },
-        // { src: "Images/barnhouse_2.jpg", caption: "Барнхаус — гостиная" },
-        // { src: "Images/barnhouse_3.jpg", caption: "Барнхаус — спальня" },
-      ],
-    };
-  
-    const modal = document.getElementById("galleryModal");
-    const imgEl = document.getElementById("modalImage");
-    const capEl = document.getElementById("modalCaption");
-  
-    if (!modal || !imgEl || !capEl) return;
-  
-    let currentGallery = [];
-    let index = 0;
-  
-    const openModal = () => {
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    };
-  
-    const closeModal = () => {
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    };
-  
-    const render = () => {
-      const item = currentGallery[index];
-      if (!item) return;
-      imgEl.src = item.src;
-      imgEl.alt = item.caption || "Фото";
-      capEl.textContent = item.caption || "";
-    };
-  
-    const prev = () => {
-      index = (index - 1 + currentGallery.length) % currentGallery.length;
-      render();
-    };
-  
-    const next = () => {
-      index = (index + 1) % currentGallery.length;
-      render();
-    };
-  
-    // Open buttons
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".gallery-btn");
-      if (!btn) return;
-  
-      e.preventDefault();
-      const key = btn.getAttribute("data-gallery");
-      const gallery = GALLERIES[key];
-  
-      if (!gallery || gallery.length === 0) return;
-  
-      currentGallery = gallery;
-      index = 0;
-      render();
-      openModal();
-    });
-  
-    // Close / nav controls
-    modal.addEventListener("click", (e) => {
-      if (e.target.matches("[data-close]")) closeModal();
-      if (e.target.matches("[data-prev]")) prev();
-      if (e.target.matches("[data-next]")) next();
-    });
-  
-    // Keyboard support
-    document.addEventListener("keydown", (e) => {
-      if (!modal.classList.contains("is-open")) return;
-  
-      if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    });
-  })();
-  
+  console.log("gallery.js loaded");
+
+  const GALLERIES = {
+    aframe1: [
+      { src: "Images/A1/photo_1_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+      { src: "Images/A1/photo_2_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+      { src: "Images/A1/photo_3_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+      { src: "Images/A1/photo_4_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+      { src: "Images/A1/photo_5_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+      { src: "Images/A1/photo_6_2026-02-15_16-27-06.jpg", caption: "A-frame №1" },
+    ],
+    aframe2: [
+      { src: "Images/A2/photo_1_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_2_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_3_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_4_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_5_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_6_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_7_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_8_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+      { src: "Images/A2/photo_9_2026-02-15_16-28-31.jpg", caption: "A-frame №2" },
+    ],
+    barnhouse: [
+      { src: "Images/BH/photo_1_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_2_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_3_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_4_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_5_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_6_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_7_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_8_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+      { src: "Images/BH/photo_9_2026-02-15_15-50-16.jpg", caption: "Барнхаус" },
+    ],
+  };
+
+  const modal = document.getElementById("galleryModal");
+  const imgEl = document.getElementById("modalImage");
+  const capEl = document.getElementById("modalCaption");
+
+  if (!modal || !imgEl || !capEl) {
+    console.error("Modal elements not found. Check IDs: galleryModal, modalImage, modalCaption.");
+    return;
+  }
+
+  let currentGallery = [];
+  let index = 0;
+
+  const openModal = () => {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  const render = () => {
+    const item = currentGallery[index];
+    if (!item) return;
+    imgEl.src = item.src;
+    imgEl.alt = item.caption || "Фото";
+    capEl.textContent = item.caption || "";
+  };
+
+  const prev = () => {
+    index = (index - 1 + currentGallery.length) % currentGallery.length;
+    render();
+  };
+
+  const next = () => {
+    index = (index + 1) % currentGallery.length;
+    render();
+  };
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".gallery-btn");
+    if (!btn) return;
+
+    e.preventDefault();
+
+    const key = btn.getAttribute("data-gallery");
+    const gallery = GALLERIES[key];
+
+    if (!gallery || gallery.length === 0) {
+      console.error("No gallery found for key:", key);
+      return;
+    }
+
+    currentGallery = gallery;
+    index = 0;
+    render();
+    openModal();
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.matches("[data-close]")) closeModal();
+    if (e.target.matches("[data-prev]")) prev();
+    if (e.target.matches("[data-next]")) next();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+})();
