@@ -294,6 +294,21 @@ body {
   transform: translateY(-2px);
 }
 
+.section-dark {
+  background: #111;
+  max-width: none;
+}
+
+.section-dark .section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 72px 20px; /* same as .section padding */
+}
+
+.section.section-dark {
+  padding: 0;
+}
+
 /* =========================
    RESPONSIVE
    ========================= */
