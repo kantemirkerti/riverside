@@ -356,6 +356,10 @@ body {
   .hero-subtitle {
     font-size: clamp(15px, 4vw, 18px);
   }
+
+  .break-small {
+    display: block;
+  }
 }
 
 /* =========================
